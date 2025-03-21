@@ -3,14 +3,13 @@ import sqlite3
 import datetime
 import google.generativeai as genai
 import os
-
-app = Flask(__name__)
-
-flag = 1
 api = 'AIzaSyC9q9NTvWXAjAJjHHHg7dh3Ip76WlL7H3c'
 model = genai.GenerativeModel('gemini-1.5-flash')
 genai.configure(api_key=api)
 
+app = Flask(__name__)
+
+flag = 1
 @app.route("/", methods = ['POST', 'GET'])
 def index():
     return(render_template('index.html'))

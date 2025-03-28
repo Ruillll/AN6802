@@ -4,7 +4,8 @@ import datetime
 import google.generativeai as genai
 import os
 import wikipedia
-api = 'AIzaSyC9q9NTvWXAjAJjHHHg7dh3Ip76WlL7H3c'
+
+api = os.getenv('makersuite')
 model = genai.GenerativeModel('gemini-1.5-flash')
 genai.configure(api_key=api)
 
